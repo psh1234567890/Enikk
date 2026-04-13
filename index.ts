@@ -49,6 +49,16 @@ async function fetchSolvedAc(url: string) {
     return res.data;
 }
 
+// 🚨👇 여기에 잃어버린 코드를 다시 넣어주세요! 👇🚨
+client.once('ready', () => {
+    console.log(`✅ 에닉 시스템 가동 준비 완료: ${client.user?.tag}`);
+    client.user?.setActivity({
+        name: '시스템 관리 가동 중..',
+        type: ActivityType.Watching,
+    });
+});
+// 🚨👆 여기까지 👆🚨
+
 client.on('messageCreate', async (message) => {
     if (message.author.bot) return;
 
